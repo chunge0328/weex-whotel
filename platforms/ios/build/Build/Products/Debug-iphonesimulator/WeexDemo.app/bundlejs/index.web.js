@@ -143,13 +143,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
 
 var modal = weex.requireModule('modal');
 //    const share = weex.requireModule('share')
-const toHotel = weex.requireModule('save2detail');
+const events = weex.requireModule('events');
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -158,17 +161,18 @@ const toHotel = weex.requireModule('save2detail');
 
     methods: {
 
-        fetchListData() {
+        fetchListData(userid) {
 
-            __WEBPACK_IMPORTED_MODULE_0__fetchdata___default.a.collection().then(response => {
+            __WEBPACK_IMPORTED_MODULE_0__fetchdata___default.a.collection(userid).then(response => {
 
                 this.listData = response;
             });
         },
 
-        cellClick(item) {
+        cellClick(e) {
 
-            toHotel.openHotelDetailFromSavePage(this.listData.Hotels);
+            //                events.openHotelDetailFromSavePage(e.target.attr.item)
+
 
             //                share.share("share href","share title")
 
@@ -202,7 +206,19 @@ const toHotel = weex.requireModule('save2detail');
     created() {
 
         //请求数据
-        this.fetchListData();
+        //获取userid
+        //            this.fetchListData("4706587")
+        modal.alert({
+            message: "testa",
+            duration: 3
+        });
+
+        //            events.getUserIDCallBack((userid) => {
+        //
+        //                this.fetchListData(userid)
+        //
+        //            })
+
 
         //            console.log('will show toast')
     }
@@ -233,7 +249,7 @@ var stream = weex.requireModule('stream');
 
 module.exports = {
 
-    collection() {
+    collection(userid) {
 
         return new Promise((resolve, reject) => {
             stream.fetch({
@@ -241,7 +257,7 @@ module.exports = {
                 method: 'POST',
                 url: 'http://api.zmjiudian.com/api/Collect/GetPageCollectHotellist',
                 type: 'json',
-                body: 'userid=4512657&start=0&count=10',
+                body: "userid=" + userid + "&start=0&count=10",
                 headers: {
                     "Content-Type": 'application/x-www-form-urlencoded'
                 }
@@ -392,7 +408,11 @@ module.exports = function normalizeComponent (
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('list', {
     staticClass: "list"
-  }, [_c('refresh'), _vm._v(" "), _vm._l((_vm.listData.Hotels), function(item) {
+  }, [_c('refresh'), _vm._v(" "), _c('div', [_c('text', {
+    staticStyle: {
+      "font-size": "80px"
+    }
+  }, [_vm._v("hello android ~")])]), _vm._v(" "), _vm._l((_vm.listData.Hotels), function(item) {
     return _c('cell', {
       attrs: {
         "item": item
@@ -403,11 +423,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('div', {
       staticClass: "item"
     }, [_c('div', {
-      staticClass: "imgcontainer"
+      staticClass: "imgcontainer",
+      staticStyle: {
+        "margin": "auto"
+      }
     }, [_c('image', {
       staticStyle: {
-        "width": "750px",
-        "height": "400px"
+        "height": "400px",
+        "width": "750px"
       },
       attrs: {
         "resize": "cover",

@@ -198,8 +198,8 @@ public class WXPageActivity extends AbsWeexActivity implements
     }
 
     return super.onOptionsItemSelected(item);
-  }
 
+  }
   @Override
   public void onActivityResult(int requestCode, int resultCode, Intent data) {
     IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);

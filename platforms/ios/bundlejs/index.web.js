@@ -65,7 +65,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -74,13 +74,13 @@
 
 
 /* styles */
-__webpack_require__(8)
+__webpack_require__(7)
 
-var Component = __webpack_require__(6)(
+var Component = __webpack_require__(5)(
   /* script */
   __webpack_require__(1),
   /* template */
-  __webpack_require__(7),
+  __webpack_require__(6),
   /* scopeId */
   null,
   /* cssModules */
@@ -112,8 +112,9 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fetchdata__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fetchdata___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__fetchdata__);
+//
+//
+//
 //
 //
 //
@@ -145,126 +146,115 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-
+//    import dataCenter from './fetchdata'
 
 var modal = weex.requireModule('modal');
 //    const share = weex.requireModule('share')
-const events = weex.requireModule('events');
+//    const events = weex.requireModule('events')
+
+
+//module.exports = {
+//    data(){
+//        return {
+//            logoUrl: 'http://img1.vued.vanthink.cn/vued08aa73a9ab65dcbd360ec54659ada97c.png'
+//        }
+//    },
+//    created(){
+//    },
+//    methods:{
+//        cellClick(e){
+//            modal.alert({
+//                message: "test",
+//                duration: 3
+//            })
+//
+//        },
+//    }
+//}
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
     //getter & setter
-    computed: {},
+    //        computed: {
+    //
+    //        },
 
     methods: {
+        //            update: function (e) {
+        //                modal.alert({
+        //                    message: "testa",
+        //                    duration: 3
+        //                })
+        //
+        //                this.target = 'Weex'
+        //                console.log('target:', this.target)
+        //            }
 
-        fetchListData(userid) {
+        fetchListData: function (userid) {
 
-            __WEBPACK_IMPORTED_MODULE_0__fetchdata___default.a.collection(userid).then(response => {
+            dataCenter.collection(userid).then(response => {
 
                 this.listData = response;
             });
         },
 
-        cellClick(e) {
+        cellClick: function (e) {
 
-            events.openHotelDetailFromSavePage(e.target.attr.item);
-
-            //                share.share("share href","share title")
-
-            //                console.log('share')
-
-
-            //                const item = e.Brief
-            //
-            //                modal.toast({
-            //                    message: "test",
-            //                    duration: 0.3
-            //                })
+            //                events.openHotelDetailFromSavePage(e.target.attr.item)
+            modal.alert({
+                message: "test",
+                duration: 3
+            });
         }
 
     },
 
     // 属性
-    data() {
+    data: {
 
-        return {
-            //                imageList: [
-            //                    { src: 'http://p1.zmjiudian.com/116YLS711uz_theme'},
-            //                    { src: 'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg'},
-            //                    { src: 'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg'}
-            //                ],
+        //            return {
+        //                imageList: [
+        //                    { src: 'http://p1.zmjiudian.com/116YLS711uz_theme'},
+        //                    { src: 'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg'},
+        //                    { src: 'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg'}
+        //                ],
+        //
+        listData: {},
+        //
+        //                logoUrl: 'http://img1.vued.vanthink.cn/vued08aa73a9ab65dcbd360ec54659ada97c.png',
+        //
+        //            }
+        logoUrl: 'http://img1.vued.vanthink.cn/vued08aa73a9ab65dcbd360ec54659ada97c.png'
 
-            listData: {}
-        };
     },
 
     //生命周期钩子
 
-    beforeCreate() {},
+    created: {
 
-    created() {
+        //            modal.alert({
+        //            message: "test",
+        //            duration: 3
+        //            })
 
         //请求数据
         //获取userid
+        //            this.fetchListData("4706587")
 
-        events.getUserIDCallBack(userid => {
+        //            events.getUserIDCallBack((userid) => {
+        //
+        //                this.fetchListData(userid)
+        //
+        //            })
 
-            this.fetchListData(userid);
-        });
 
-        //            console.log('will show toast')
     }
 
 });
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
-
-/**
- * Created by ShangLvInc. on 2017/6/22.
- */
-
-var stream = weex.requireModule('stream');
-
-/*
-
- POST
- Collect/GetPageCollectHotellist
- http://api.zmjiudian.com/api/
- {
- userid: 4512657
- start: 0
- count: 10
- }
- * */
-
-module.exports = {
-
-    collection(userid) {
-
-        return new Promise((resolve, reject) => {
-            stream.fetch({
-
-                method: 'POST',
-                url: 'http://api.zmjiudian.com/api/Collect/GetPageCollectHotellist',
-                type: 'json',
-                body: "userid=" + userid + "&start=0&count=10",
-                headers: {
-                    "Content-Type": 'application/x-www-form-urlencoded'
-                }
-
-            }, ret => {
-                //回调
-                resolve(ret.data);
-            });
-        });
-    }
-};
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var App = __webpack_require__(0);
@@ -272,21 +262,21 @@ App.el = '#root';
 new Vue(App);
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)();
+exports = module.exports = __webpack_require__(4)();
 // imports
 
 
 // module
-exports.push([module.i, "\n.imgcontainer {\n}\n.hotelname{\n\n  font-size: medium;\n  color: #666;\n}\n.hoteldes{\n  font-size: smaller;\n  color: #999;\n}\n.textarea{\n  margin: 10px;\n}\n\n/*.image {*/\n/*width: 700px;*/\n/*height: 300px;*/\n/*}*/\n/*.slider {*/\n/*margin-top: 25px;*/\n/*margin-left: 25px;*/\n/*width: 700px;*/\n/*height: 300px;*/\n/*border-width: 2px;*/\n/*border-style: solid;*/\n/*border-color: #41B883;*/\n/*}*/\n/*.frame {*/\n/*width: 700px;*/\n/*height: 300px;*/\n/*position: relative;*/\n/*}*/\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*.imgcontainer {*/\n\n/*}*/\n/*.hotelname{*/\n\n  /*font-size: medium;*/\n  /*color: #666;*/\n\n/*}*/\n/*.hoteldes{*/\n  /*font-size: smaller;*/\n  /*color: #999;*/\n/*}*/\n/*.textarea{*/\n  /*margin: 10px;*/\n/*}*/\n.logo { width: 360px; height: 156px;\n}\n.wrapper { align-items: center; margin-top: 120px;\n}\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports) {
 
 /*
@@ -342,7 +332,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports) {
 
 module.exports = function normalizeComponent (
@@ -395,13 +385,25 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('list', {
-    staticClass: "list"
-  }, [_c('refresh'), _vm._v(" "), _vm._l((_vm.listData.Hotels), function(item) {
+    staticClass: "wrapper",
+    on: {
+      "click": _vm.cellClick
+    }
+  }, [_c('image', {
+    staticClass: "logo",
+    attrs: {
+      "src": _vm.logoUrl
+    }
+  }), _vm._v(" "), _c('text', {
+    staticStyle: {
+      "font-size": "80px"
+    }
+  }, [_vm._v("helllllo")]), _vm._v(" "), _vm._l((_vm.listData.Hotels), function(item) {
     return _c('cell', {
       attrs: {
         "item": item
@@ -418,7 +420,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('image', {
       staticStyle: {
-        "margin": "auto"
+        "height": "400px",
+        "width": "750px"
       },
       attrs: {
         "resize": "cover",
@@ -442,17 +445,17 @@ if (false) {
 }
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(4);
+var content = __webpack_require__(3);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(9)("020c6e30", content, false);
+var update = __webpack_require__(8)("020c6e30", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -468,7 +471,7 @@ if(false) {
 }
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -487,7 +490,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(10)
+var listToStyles = __webpack_require__(9)
 
 /*
 type StyleObject = {
@@ -689,7 +692,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports) {
 
 /**

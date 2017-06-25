@@ -6,5 +6,9 @@
     {
         "merged": "/Users/budao/app-framework-android/bin/templates/app/build/intermediates/res/merged/debug/raw/zxing_beep.ogg",
         "source": "/Users/budao/app-framework-android/bin/templates/app/build/intermediates/exploded-aar/com.journeyapps/zxing-android-embedded/3.4.0/res/raw/zxing_beep.ogg"
+    },
+    {
+        "merged": "/Users/apple/Documents/WEEX/weex-whotel/platforms/android/app/build/intermediates/res/merged/debug/raw/zxing_beep.ogg",
+        "source": "/Users/apple/.android/build-cache/8e98114bad2d15ec0cbeea69e60b7dff1e586ad6/output/res/raw/zxing_beep.ogg"
     }
 ]

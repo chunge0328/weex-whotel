@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="drawee-0.10.0">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/appframework/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.10.0/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/appframework/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.10.0/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/0775bcf13530754185f8a31ab8fa10f1d8ed4781/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/0775bcf13530754185f8a31ab8fa10f1d8ed4781/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

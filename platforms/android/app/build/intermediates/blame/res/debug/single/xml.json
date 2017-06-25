@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/apple/Documents/WEEX/weex-whotel/platforms/android/app/build/intermediates/res/merged/debug/xml/app_config.xml",
+        "source": "/Users/apple/Documents/WEEX/weex-whotel/platforms/android/app/src/main/res/xml/app_config.xml"
+    },
+    {
         "merged": "/Users/budao/weex-pack/generator/platforms/templates/android/app/build/intermediates/res/merged/debug/xml/app_config.xml",
         "source": "/Users/budao/weex-pack/generator/platforms/templates/android/app/src/main/res/xml/app_config.xml"
     },
@@ -14,5 +18,9 @@
     {
         "merged": "/Users/budao/app-framework-android/bin/templates/app/build/intermediates/res/merged/debug/xml/config.xml",
         "source": "/Users/budao/app-framework-android/bin/templates/app/build/intermediates/exploded-aar/templates/weexplugin/unspecified/res/xml/config.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/WEEX/weex-whotel/platforms/android/app/build/intermediates/res/merged/debug/xml/config.xml",
+        "source": "/Users/apple/Documents/WEEX/weex-whotel/platforms/android/weexplugin/build/intermediates/bundles/default/res/xml/config.xml"
     }
 ]

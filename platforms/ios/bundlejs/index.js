@@ -65,7 +65,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -74,8 +74,9 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fetchdata__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fetchdata___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__fetchdata__);
+//
+//
+//
 //
 //
 //
@@ -107,75 +108,109 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-
+//    import dataCenter from './fetchdata'
 
 var modal = weex.requireModule('modal');
 //    const share = weex.requireModule('share')
-const events = weex.requireModule('events');
+//    const events = weex.requireModule('events')
+
+
+//module.exports = {
+//    data(){
+//        return {
+//            logoUrl: 'http://img1.vued.vanthink.cn/vued08aa73a9ab65dcbd360ec54659ada97c.png'
+//        }
+//    },
+//    created(){
+//    },
+//    methods:{
+//        cellClick(e){
+//            modal.alert({
+//                message: "test",
+//                duration: 3
+//            })
+//
+//        },
+//    }
+//}
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
     //getter & setter
-    computed: {},
+    //        computed: {
+    //
+    //        },
 
     methods: {
+        //            update: function (e) {
+        //                modal.alert({
+        //                    message: "testa",
+        //                    duration: 3
+        //                })
+        //
+        //                this.target = 'Weex'
+        //                console.log('target:', this.target)
+        //            }
 
-        fetchListData(userid) {
+        fetchListData: function (userid) {
 
-            __WEBPACK_IMPORTED_MODULE_0__fetchdata___default.a.collection(userid).then(response => {
+            dataCenter.collection(userid).then(response => {
 
                 this.listData = response;
             });
         },
 
-        cellClick(e) {
+        cellClick: function (e) {
 
-            events.openHotelDetailFromSavePage(e.target.attr.item);
-
-            //                share.share("share href","share title")
-
-            //                console.log('share')
-
-
-            //                const item = e.Brief
-            //
-            //                modal.toast({
-            //                    message: "test",
-            //                    duration: 0.3
-            //                })
+            //                events.openHotelDetailFromSavePage(e.target.attr.item)
+            modal.alert({
+                message: "test",
+                duration: 3
+            });
         }
 
     },
 
     // 属性
-    data() {
+    data: {
 
-        return {
-            //                imageList: [
-            //                    { src: 'http://p1.zmjiudian.com/116YLS711uz_theme'},
-            //                    { src: 'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg'},
-            //                    { src: 'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg'}
-            //                ],
+        //            return {
+        //                imageList: [
+        //                    { src: 'http://p1.zmjiudian.com/116YLS711uz_theme'},
+        //                    { src: 'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg'},
+        //                    { src: 'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg'}
+        //                ],
+        //
+        listData: {},
+        //
+        //                logoUrl: 'http://img1.vued.vanthink.cn/vued08aa73a9ab65dcbd360ec54659ada97c.png',
+        //
+        //            }
+        logoUrl: 'http://img1.vued.vanthink.cn/vued08aa73a9ab65dcbd360ec54659ada97c.png'
 
-            listData: {}
-        };
     },
 
     //生命周期钩子
 
-    beforeCreate() {},
+    created: {
 
-    created() {
+        //            modal.alert({
+        //            message: "test",
+        //            duration: 3
+        //            })
 
         //请求数据
         //获取userid
+        //            this.fetchListData("4706587")
 
-        events.getUserIDCallBack(userid => {
+        //            events.getUserIDCallBack((userid) => {
+        //
+        //                this.fetchListData(userid)
+        //
+        //            })
 
-            this.fetchListData(userid);
-        });
 
-        //            console.log('will show toast')
     }
 
 });
@@ -185,14 +220,13 @@ const events = weex.requireModule('events');
 /***/ (function(module, exports) {
 
 module.exports = {
-  "hotelname": {
-    "color": "#666666"
+  "logo": {
+    "width": 360,
+    "height": 156
   },
-  "hoteldes": {
-    "color": "#999999"
-  },
-  "textarea": {
-    "margin": 10
+  "wrapper": {
+    "alignItems": "center",
+    "marginTop": 120
   }
 }
 
@@ -202,8 +236,20 @@ module.exports = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('list', {
-    staticClass: ["list"]
-  }, [_c('refresh'), _vm._l((_vm.listData.Hotels), function(item) {
+    staticClass: ["wrapper"],
+    on: {
+      "click": _vm.cellClick
+    }
+  }, [_c('image', {
+    staticClass: ["logo"],
+    attrs: {
+      "src": _vm.logoUrl
+    }
+  }), _c('text', {
+    staticStyle: {
+      fontSize: "80px"
+    }
+  }, [_vm._v("helllllo")]), _vm._l((_vm.listData.Hotels), function(item) {
     return _c('cell', {
       appendAsTree: true,
       attrs: {
@@ -222,7 +268,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('image', {
       staticStyle: {
-        margin: "auto"
+        height: "400px",
+        width: "750px"
       },
       attrs: {
         "resize": "cover",
@@ -241,51 +288,6 @@ module.exports.render._withStripped = true
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
-
-/**
- * Created by ShangLvInc. on 2017/6/22.
- */
-
-var stream = weex.requireModule('stream');
-
-/*
-
- POST
- Collect/GetPageCollectHotellist
- http://api.zmjiudian.com/api/
- {
- userid: 4512657
- start: 0
- count: 10
- }
- * */
-
-module.exports = {
-
-    collection(userid) {
-
-        return new Promise((resolve, reject) => {
-            stream.fetch({
-
-                method: 'POST',
-                url: 'http://api.zmjiudian.com/api/Collect/GetPageCollectHotellist',
-                type: 'json',
-                body: "userid=" + userid + "&start=0&count=10",
-                headers: {
-                    "Content-Type": 'application/x-www-form-urlencoded'
-                }
-
-            }, ret => {
-                //回调
-                resolve(ret.data);
-            });
-        });
-    }
-};
-
-/***/ }),
-/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__

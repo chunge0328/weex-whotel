@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/apple/Documents/WEEX/weex-whotel/platforms/android/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/Users/apple/Documents/WEEX/weex-whotel/platforms/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
         "merged": "/Users/budao/weex-pack/generator/platforms/templates/android/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
         "source": "/Users/budao/weex-pack/generator/platforms/templates/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
