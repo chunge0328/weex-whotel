@@ -65,7 +65,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -74,6 +74,10 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fetchdata__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fetchdata___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__fetchdata__);
+//
+//
 //
 //
 //
@@ -108,10 +112,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-//    import dataCenter from './fetchdata'
+
 
 var modal = weex.requireModule('modal');
-//    const share = weex.requireModule('share')
 //    const events = weex.requireModule('events')
 
 
@@ -137,27 +140,14 @@ var modal = weex.requireModule('modal');
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
-    //getter & setter
-    //        computed: {
-    //
-    //        },
-
     methods: {
-        //            update: function (e) {
-        //                modal.alert({
-        //                    message: "testa",
-        //                    duration: 3
-        //                })
-        //
-        //                this.target = 'Weex'
-        //                console.log('target:', this.target)
-        //            }
 
         fetchListData: function (userid) {
 
-            dataCenter.collection(userid).then(response => {
+            __WEBPACK_IMPORTED_MODULE_0__fetchdata___default.a.collection(userid).then(response => {
 
-                this.listData = response;
+                //                    listData = response
+
             });
         },
 
@@ -191,27 +181,40 @@ var modal = weex.requireModule('modal');
 
     },
 
+    //        create() {
+    //          this.fetchListData('123')
+    //        },
+
+    create: function () {
+        //            modal.alert({
+        //                message: "test",
+        //                duration: 3
+        //            })
+        this.fetchListData('4706587');
+    }
+
     //生命周期钩子
 
-    created: {
+    //        created: {
 
-        //            modal.alert({
-        //            message: "test",
-        //            duration: 3
-        //            })
+    //            modal.alert({
+    //            message: "test",
+    //            duration: 3
+    //            })
 
-        //请求数据
-        //获取userid
-        //            this.fetchListData("4706587")
+    //请求数据
+    //获取userid
+    //            this.fetchListData("4706587")
 
-        //            events.getUserIDCallBack((userid) => {
-        //
-        //                this.fetchListData(userid)
-        //
-        //            })
+    //            events.getUserIDCallBack((userid) => {
+    //
+    //                this.fetchListData(userid)
+    //
+    //            })
 
 
-    }
+    //        },
+
 
 });
 
@@ -235,7 +238,7 @@ module.exports = {
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('list', {
+  return _c('div', {
     staticClass: ["wrapper"],
     on: {
       "click": _vm.cellClick
@@ -249,7 +252,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       fontSize: "80px"
     }
-  }, [_vm._v("helllllo")]), _vm._l((_vm.listData.Hotels), function(item) {
+  }, [_vm._v("helllo123")]), _c('list', _vm._l((_vm.listData.Hotels), function(item) {
     return _c('cell', {
       appendAsTree: true,
       attrs: {
@@ -282,12 +285,57 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(item.Name))]), _c('text', {
       staticClass: ["hoteldes"]
     }, [_vm._v(_vm._s(item.Brief))])])])])
-  })], 2)
+  }))])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+/**
+ * Created by ShangLvInc. on 2017/6/22.
+ */
+
+var stream = weex.requireModule('stream');
+
+/*
+
+ POST
+ Collect/GetPageCollectHotellist
+ http://api.zmjiudian.com/api/
+ {
+ userid: 4512657
+ start: 0
+ count: 10
+ }
+ * */
+
+module.exports = {
+
+    collection(userid) {
+
+        return new Promise((resolve, reject) => {
+            stream.fetch({
+
+                method: 'POST',
+                url: 'http://api.zmjiudian.com/api/Collect/GetPageCollectHotellist',
+                type: 'json',
+                body: "userid=" + userid + "&start=0&count=10",
+                headers: {
+                    "Content-Type": 'application/x-www-form-urlencoded'
+                }
+
+            }, ret => {
+                //回调
+                resolve(ret.data);
+            });
+        });
+    }
+};
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__

@@ -1,32 +1,35 @@
 
 <template>
 
-    <list class="wrapper" @click="cellClick">
-    <image :src="logoUrl" class="logo"></image>
-      <text style="font-size: 80px">helllllo</text>
+    <div class="wrapper" @click="cellClick">
+        <image :src="logoUrl" class="logo"></image>
+        <text style="font-size: 80px">helllo123</text>
+        <text>{{this.listData}}</text>
+        <list>
 
-    <cell v-for="item in listData.Hotels" @click="cellClick" :item="item">
-      <div class="item">
-        <div class="imgcontainer" style="margin: auto">
+            <cell v-for="item in listData.Hotels" @click="cellClick" :item="item">
+                <div class="item">
+                    <div class="imgcontainer" style="margin: auto">
 
-          <image resize="cover" v-bind:src="item.Picture" style="height: 400px; width: 750px;"></image>
+                        <image resize="cover" v-bind:src="item.Picture" style="height: 400px; width: 750px;"></image>
 
-        </div>
+                    </div>
 
-        <div class="textarea">
+                    <div class="textarea">
 
-          <text class="hotelname">{{item.Name}}</text>
-          <text class="hoteldes">{{item.Brief}}</text>
+                        <text class="hotelname">{{item.Name}}</text>
+                        <text class="hoteldes">{{item.Brief}}</text>
 
-        </div>
+                    </div>
 
-      </div>
+                </div>
 
-    </cell>
+            </cell>
+        </list>
 
 
 
-  </list>
+  </div>
 
 </template>
 
@@ -36,27 +39,6 @@
 
     var modal = weex.requireModule('modal')
 //    const events = weex.requireModule('events')
-
-
-
-//module.exports = {
-//    data(){
-//        return {
-//            logoUrl: 'http://img1.vued.vanthink.cn/vued08aa73a9ab65dcbd360ec54659ada97c.png'
-//        }
-//    },
-//    created(){
-//    },
-//    methods:{
-//        cellClick(e){
-//            modal.alert({
-//                message: "test",
-//                duration: 3
-//            })
-//
-//        },
-//    }
-//}
 
 
 
@@ -84,6 +66,16 @@
 
             },
 
+            created: function(){
+
+                modal.alert({
+                    message: "test",
+                    duration: 3
+                })
+                this.fetchListData('4706587')
+
+            }
+
         },
 
         // 属性
@@ -105,12 +97,10 @@
 
         },
 
-        create: {
+//        create() {
+//          this.fetchListData('123')
+//        },
 
-        },
-        create() {
-          this.fetchListData('123')
-        }
 
 
         //生命周期钩子
@@ -131,9 +121,6 @@
 //                this.fetchListData(userid)
 //
 //            })
-
-
-
 //        },
 
 

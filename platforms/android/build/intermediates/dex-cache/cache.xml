@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="0d255f1c1fb951cb6b298a0f8ef5100d4361eb57">
+        sha1="12c09b941cd53fec8adf1ebd7e7566a5fe846c60">
         <dex dex="/Users/apple/Documents/WEEX/weex-whotel/platforms/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_adaf0cd101a0f03e9cb4820eef4ee7526696cabc/classes.dex" />
     </item>
     <item
@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="/Users/apple/Documents/WEEX/weex-whotel/platforms/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8dbfdd814d66a4d755457d41ee4617fd72dfc60d/classes.dex" />
     </item>
 

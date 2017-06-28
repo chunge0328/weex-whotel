@@ -72,7 +72,7 @@ MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] /Users/apple/.android
 		ADDED from /Users/apple/Documents/WEEX/weex-whotel/platforms/android/app/src/main/AndroidManifest.xml:19:19-67
 application
 ADDED from /Users/apple/Documents/WEEX/weex-whotel/platforms/android/app/src/main/AndroidManifest.xml:21:5-66:19
-MERGED from [com.taobao.android:weex_sdk:0.10.0] /Users/apple/.android/build-cache/cb991fe2b6e0ca303d01aa83508ab21ce408c319/output/AndroidManifest.xml:11:5-17:19
+MERGED from [com.taobao.android:weex_sdk:0.11.0] /Users/apple/.android/build-cache/3f13a0b372de032abd43060df5cd3be0727d6c65/output/AndroidManifest.xml:11:5-17:19
 MERGED from [android:weexplugin:unspecified] /Users/apple/Documents/WEEX/weex-whotel/platforms/android/weexplugin/build/intermediates/bundles/default/AndroidManifest.xml:11:5-12:19
 MERGED from [com.android.support:design:23.1.1] /Users/apple/.android/build-cache/c720a88e4ead9c4ccacb94bf7d7b800a3d645dbf/output/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:23.1.1] /Users/apple/.android/build-cache/9dba7b555966f3eefb02603d1ea2864fb3a322e3/output/AndroidManifest.xml:22:5-20
@@ -177,7 +177,7 @@ MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] /Users/apple/.android
 		ADDED from /Users/apple/Documents/WEEX/weex-whotel/platforms/android/app/src/main/AndroidManifest.xml:63:13-74
 uses-sdk
 INJECTED from /Users/apple/Documents/WEEX/weex-whotel/platforms/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.taobao.android:weex_sdk:0.10.0] /Users/apple/.android/build-cache/cb991fe2b6e0ca303d01aa83508ab21ce408c319/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.taobao.android:weex_sdk:0.11.0] /Users/apple/.android/build-cache/3f13a0b372de032abd43060df5cd3be0727d6c65/output/AndroidManifest.xml:7:5-9:41
 MERGED from [android:appframework:unspecified] /Users/apple/Documents/WEEX/weex-whotel/platforms/android/appframework/build/intermediates/bundles/default/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.fresco:fresco:0.10.0] /Users/apple/.android/build-cache/cbe46086e13274e7578ba7c468206fad188c2f46/output/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:drawee:0.10.0] /Users/apple/.android/build-cache/0775bcf13530754185f8a31ab8fa10f1d8ed4781/output/AndroidManifest.xml:5:5-7:41
@@ -200,13 +200,13 @@ MERGED from [com.android.support:support-v4:23.1.1] /Users/apple/.android/build-
 		INJECTED from /Users/apple/Documents/WEEX/weex-whotel/platforms/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/apple/Documents/WEEX/weex-whotel/platforms/android/app/src/main/AndroidManifest.xml
 receiver#com.taobao.weex.WXGlobalEventReceiver
-ADDED from [com.taobao.android:weex_sdk:0.10.0] /Users/apple/.android/build-cache/cb991fe2b6e0ca303d01aa83508ab21ce408c319/output/AndroidManifest.xml:12:9-16:20
+ADDED from [com.taobao.android:weex_sdk:0.11.0] /Users/apple/.android/build-cache/3f13a0b372de032abd43060df5cd3be0727d6c65/output/AndroidManifest.xml:12:9-16:20
 	android:enabled
-		ADDED from [com.taobao.android:weex_sdk:0.10.0] /Users/apple/.android/build-cache/cb991fe2b6e0ca303d01aa83508ab21ce408c319/output/AndroidManifest.xml:14:13-35
+		ADDED from [com.taobao.android:weex_sdk:0.11.0] /Users/apple/.android/build-cache/3f13a0b372de032abd43060df5cd3be0727d6c65/output/AndroidManifest.xml:14:13-35
 	android:exported
-		ADDED from [com.taobao.android:weex_sdk:0.10.0] /Users/apple/.android/build-cache/cb991fe2b6e0ca303d01aa83508ab21ce408c319/output/AndroidManifest.xml:15:13-37
+		ADDED from [com.taobao.android:weex_sdk:0.11.0] /Users/apple/.android/build-cache/3f13a0b372de032abd43060df5cd3be0727d6c65/output/AndroidManifest.xml:15:13-37
 	android:name
-		ADDED from [com.taobao.android:weex_sdk:0.10.0] /Users/apple/.android/build-cache/cb991fe2b6e0ca303d01aa83508ab21ce408c319/output/AndroidManifest.xml:13:13-65
+		ADDED from [com.taobao.android:weex_sdk:0.11.0] /Users/apple/.android/build-cache/3f13a0b372de032abd43060df5cd3be0727d6c65/output/AndroidManifest.xml:13:13-65
 uses-feature#android.hardware.camera.front
 ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] /Users/apple/.android/build-cache/8e98114bad2d15ec0cbeea69e60b7dff1e586ad6/output/AndroidManifest.xml:27:5-29:36
 	android:required

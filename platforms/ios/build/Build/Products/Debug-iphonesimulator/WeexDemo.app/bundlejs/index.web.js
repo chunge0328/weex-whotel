@@ -151,17 +151,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var modal = weex.requireModule('modal');
-//    const share = weex.requireModule('share')
-const events = weex.requireModule('events');
+//    const events = weex.requireModule('events')
+
+
+//module.exports = {
+//    data(){
+//        return {
+//            logoUrl: 'http://img1.vued.vanthink.cn/vued08aa73a9ab65dcbd360ec54659ada97c.png'
+//        }
+//    },
+//    created(){
+//    },
+//    methods:{
+//        cellClick(e){
+//            modal.alert({
+//                message: "test",
+//                duration: 3
+//            })
+//
+//        },
+//    }
+//}
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
-    //getter & setter
-    computed: {},
-
     methods: {
 
-        fetchListData(userid) {
+        fetchListData: function (userid) {
 
             __WEBPACK_IMPORTED_MODULE_0__fetchdata___default.a.collection(userid).then(response => {
 
@@ -169,59 +186,67 @@ const events = weex.requireModule('events');
             });
         },
 
-        cellClick(e) {
+        cellClick: function (e) {
 
             //                events.openHotelDetailFromSavePage(e.target.attr.item)
-
-
-            //                share.share("share href","share title")
-
-            //                console.log('share')
-
-
-            //                const item = e.Brief
-            //
-            //                modal.toast({
-            //                    message: "test",
-            //                    duration: 0.3
-            //                })
+            modal.alert({
+                message: "test",
+                duration: 3
+            });
         }
 
     },
 
     // 属性
-    data() {
+    data: {
 
-        return {
-            imageList: [{ src: 'http://p1.zmjiudian.com/116YLS711uz_theme' }, { src: 'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg' }, { src: 'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg' }],
+        //            return {
+        //                imageList: [
+        //                    { src: 'http://p1.zmjiudian.com/116YLS711uz_theme'},
+        //                    { src: 'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg'},
+        //                    { src: 'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg'}
+        //                ],
+        //
+        listData: {},
+        //
+        //                logoUrl: 'http://img1.vued.vanthink.cn/vued08aa73a9ab65dcbd360ec54659ada97c.png',
+        //
+        //            }
+        logoUrl: 'http://img1.vued.vanthink.cn/vued08aa73a9ab65dcbd360ec54659ada97c.png'
 
-            listData: {}
-        };
     },
+
+    //        create() {
+    //          this.fetchListData('123')
+    //        },
+
+    create: function () {
+
+        this.fetchListData('123');
+    }
 
     //生命周期钩子
 
-    beforeCreate() {},
+    //        created: {
 
-    created() {
+    //            modal.alert({
+    //            message: "test",
+    //            duration: 3
+    //            })
 
-        //请求数据
-        //获取userid
-        //            this.fetchListData("4706587")
-        modal.alert({
-            message: "testa",
-            duration: 3
-        });
+    //请求数据
+    //获取userid
+    //            this.fetchListData("4706587")
 
-        //            events.getUserIDCallBack((userid) => {
-        //
-        //                this.fetchListData(userid)
-        //
-        //            })
+    //            events.getUserIDCallBack((userid) => {
+    //
+    //                this.fetchListData(userid)
+    //
+    //            })
 
 
-        //            console.log('will show toast')
-    }
+    //        },
+
 
 });
 
@@ -287,7 +312,7 @@ exports = module.exports = __webpack_require__(5)();
 
 
 // module
-exports.push([module.i, "\n.imgcontainer {\n}\n.hotelname{\n\n  font-size: medium;\n  color: #666;\n}\n.hoteldes{\n  font-size: smaller;\n  color: #999;\n}\n.textarea{\n  margin: 10px;\n}\n\n/*.image {*/\n/*width: 700px;*/\n/*height: 300px;*/\n/*}*/\n/*.slider {*/\n/*margin-top: 25px;*/\n/*margin-left: 25px;*/\n/*width: 700px;*/\n/*height: 300px;*/\n/*border-width: 2px;*/\n/*border-style: solid;*/\n/*border-color: #41B883;*/\n/*}*/\n/*.frame {*/\n/*width: 700px;*/\n/*height: 300px;*/\n/*position: relative;*/\n/*}*/\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*.imgcontainer {*/\n\n/*}*/\n/*.hotelname{*/\n\n  /*font-size: medium;*/\n  /*color: #666;*/\n\n/*}*/\n/*.hoteldes{*/\n  /*font-size: smaller;*/\n  /*color: #999;*/\n/*}*/\n/*.textarea{*/\n  /*margin: 10px;*/\n/*}*/\n.logo { width: 360px; height: 156px;\n}\n.wrapper { align-items: center; margin-top: 120px;\n}\n\n\n", ""]);
 
 // exports
 
@@ -407,12 +432,20 @@ module.exports = function normalizeComponent (
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('list', {
-    staticClass: "list"
-  }, [_c('refresh'), _vm._v(" "), _c('div', [_c('text', {
+    staticClass: "wrapper",
+    on: {
+      "click": _vm.cellClick
+    }
+  }, [_c('image', {
+    staticClass: "logo",
+    attrs: {
+      "src": _vm.logoUrl
+    }
+  }), _vm._v(" "), _c('text', {
     staticStyle: {
       "font-size": "80px"
     }
-  }, [_vm._v("hello android ~")])]), _vm._v(" "), _vm._l((_vm.listData.Hotels), function(item) {
+  }, [_vm._v("helllllo")]), _vm._v(" "), _vm._l((_vm.listData.Hotels), function(item) {
     return _c('cell', {
       attrs: {
         "item": item

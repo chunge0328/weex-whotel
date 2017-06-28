@@ -65,7 +65,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -74,13 +74,13 @@
 
 
 /* styles */
-__webpack_require__(7)
+__webpack_require__(8)
 
-var Component = __webpack_require__(5)(
+var Component = __webpack_require__(6)(
   /* script */
   __webpack_require__(1),
   /* template */
-  __webpack_require__(6),
+  __webpack_require__(7),
   /* scopeId */
   null,
   /* cssModules */
@@ -112,6 +112,10 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fetchdata__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fetchdata___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__fetchdata__);
+//
+//
 //
 //
 //
@@ -146,10 +150,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-//    import dataCenter from './fetchdata'
+
 
 var modal = weex.requireModule('modal');
-//    const share = weex.requireModule('share')
 //    const events = weex.requireModule('events')
 
 
@@ -175,27 +178,14 @@ var modal = weex.requireModule('modal');
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
-    //getter & setter
-    //        computed: {
-    //
-    //        },
-
     methods: {
-        //            update: function (e) {
-        //                modal.alert({
-        //                    message: "testa",
-        //                    duration: 3
-        //                })
-        //
-        //                this.target = 'Weex'
-        //                console.log('target:', this.target)
-        //            }
 
         fetchListData: function (userid) {
 
-            dataCenter.collection(userid).then(response => {
+            __WEBPACK_IMPORTED_MODULE_0__fetchdata___default.a.collection(userid).then(response => {
 
-                this.listData = response;
+                //                    listData = response
+
             });
         },
 
@@ -229,32 +219,90 @@ var modal = weex.requireModule('modal');
 
     },
 
+    //        create() {
+    //          this.fetchListData('123')
+    //        },
+
+    create: function () {
+        //            modal.alert({
+        //                message: "test",
+        //                duration: 3
+        //            })
+        this.fetchListData('4706587');
+    }
+
     //生命周期钩子
 
-    created: {
+    //        created: {
 
-        //            modal.alert({
-        //            message: "test",
-        //            duration: 3
-        //            })
+    //            modal.alert({
+    //            message: "test",
+    //            duration: 3
+    //            })
 
-        //请求数据
-        //获取userid
-        //            this.fetchListData("4706587")
+    //请求数据
+    //获取userid
+    //            this.fetchListData("4706587")
 
-        //            events.getUserIDCallBack((userid) => {
-        //
-        //                this.fetchListData(userid)
-        //
-        //            })
+    //            events.getUserIDCallBack((userid) => {
+    //
+    //                this.fetchListData(userid)
+    //
+    //            })
 
 
-    }
+    //        },
+
 
 });
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports) {
+
+/**
+ * Created by ShangLvInc. on 2017/6/22.
+ */
+
+var stream = weex.requireModule('stream');
+
+/*
+
+ POST
+ Collect/GetPageCollectHotellist
+ http://api.zmjiudian.com/api/
+ {
+ userid: 4512657
+ start: 0
+ count: 10
+ }
+ * */
+
+module.exports = {
+
+    collection(userid) {
+
+        return new Promise((resolve, reject) => {
+            stream.fetch({
+
+                method: 'POST',
+                url: 'http://api.zmjiudian.com/api/Collect/GetPageCollectHotellist',
+                type: 'json',
+                body: "userid=" + userid + "&start=0&count=10",
+                headers: {
+                    "Content-Type": 'application/x-www-form-urlencoded'
+                }
+
+            }, ret => {
+                //回调
+                resolve(ret.data);
+            });
+        });
+    }
+};
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var App = __webpack_require__(0);
@@ -262,21 +310,21 @@ App.el = '#root';
 new Vue(App);
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)();
+exports = module.exports = __webpack_require__(5)();
 // imports
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*.imgcontainer {*/\n\n/*}*/\n/*.hotelname{*/\n\n  /*font-size: medium;*/\n  /*color: #666;*/\n\n/*}*/\n/*.hoteldes{*/\n  /*font-size: smaller;*/\n  /*color: #999;*/\n/*}*/\n/*.textarea{*/\n  /*margin: 10px;*/\n/*}*/\n.logo { width: 360px; height: 156px;\n}\n.wrapper { align-items: center; margin-top: 120px;\n}\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*.imgcontainer {*/\n\n/*}*/\n/*.hotelname{*/\n\n  /*font-size: medium;*/\n  /*color: #666;*/\n\n/*}*/\n/*.hoteldes{*/\n  /*font-size: smaller;*/\n  /*color: #999;*/\n/*}*/\n/*.textarea{*/\n  /*margin: 10px;*/\n/*}*/\n.logo { width: 360px; height: 156px;\n}\n.wrapper { align-items: center; margin-top: 120px;\n}\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports) {
 
 /*
@@ -332,7 +380,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 module.exports = function normalizeComponent (
@@ -385,11 +433,11 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('list', {
+  return _c('div', {
     staticClass: "wrapper",
     on: {
       "click": _vm.cellClick
@@ -403,7 +451,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       "font-size": "80px"
     }
-  }, [_vm._v("helllllo")]), _vm._v(" "), _vm._l((_vm.listData.Hotels), function(item) {
+  }, [_vm._v("helllo123")]), _vm._v(" "), _c('list', _vm._l((_vm.listData.Hotels), function(item) {
     return _c('cell', {
       attrs: {
         "item": item
@@ -434,7 +482,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(item.Name))]), _vm._v(" "), _c('text', {
       staticClass: "hoteldes"
     }, [_vm._v(_vm._s(item.Brief))])])])])
-  })], 2)
+  }))], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -445,17 +493,17 @@ if (false) {
 }
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(3);
+var content = __webpack_require__(4);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(8)("020c6e30", content, false);
+var update = __webpack_require__(9)("020c6e30", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -471,7 +519,7 @@ if(false) {
 }
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -490,7 +538,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(9)
+var listToStyles = __webpack_require__(10)
 
 /*
 type StyleObject = {
@@ -692,7 +740,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 /**
